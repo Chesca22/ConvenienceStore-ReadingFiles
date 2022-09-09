@@ -36,14 +36,18 @@ public class Store extends StoreShelf {
     public String issueReceipt() {
         String receipt = " ";
         if (ItemCart.getItemName() != null || ItemCart.getItemPrice() != 0 || ItemCart.getQuantity() != 0) {
-            receipt = " MYWay receipt:" +
-                    "Purchase receipt, issued to customer: " + "\n" +
-                    "by cashier for the purchase of items " + "\n" +
-                    " items below: " + "\n" +
-                    "\t" + "*****************************************" + "\n"+
-                    " ItemName: "  + " ItemQuantity:   "  + "Price: " +
-                    ItemCart.getItemName()+ "  " + ItemCart.getQuantity() + " " + (ItemCart.getItemPrice() / ItemCart.getQuantity())   + "\n" +
+            receipt = "\t" + " MYWay receipt:" + "\n" +
+                    "\t" + "**********************************" +"\n" +
+                    "\t" + "Customer's name: " + Roles.Customer + "\n" +
+                    "\t"  + "Purchase receipt, issued to customer: " + "\n" +
+                    "\t" + "by cashier for the purchase of items " + "\n" +
+                    "\t" + " items below: " + "\n" +
+                    "\t" + "**********************************" + "\n"+
+                    "\t" + " ItemName: "  + " ItemQuantity:   "  + "Price: " + "" +
+                    "\n" +
+                    "\t" +  ItemCart.getItemName()+ "   " + ItemCart.getQuantity() + "             " + (ItemCart.getItemPrice() / ItemCart.getQuantity())   + "\n" +
                     "\t" + "   SUBTOTAL" + " " + ItemCart.getItemPrice();
+
         } else {
             receipt = "Enter items to be purchase";
 

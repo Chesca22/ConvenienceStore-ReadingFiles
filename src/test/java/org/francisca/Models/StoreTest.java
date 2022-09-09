@@ -15,7 +15,7 @@ class StoreTest {
     void setUp() {
         users = new Users("Mart", Roles.Customer);
         users.fundAccount(3400.0);
-        product = new Products("Snacks", "Potato Chips", 400, (1.35*4));
+        product = new Products("Snacks", "Potato Chips", 400, (1.35*400));
         myStoreShelf = new StoreShelf();
         myStoreShelf.toRestock();
         myStore = new Store(myStoreShelf, product);
@@ -24,7 +24,21 @@ class StoreTest {
     }
 
     @Test
-    void sell() {
-        assertEquals(product, myStore.sell(users, "Potato Chips", 400));
+    void shouldSellProductSuccessfully() {
+        //given
+        Products myProduct = new Products("Crackers", "whole wheat", 10, (1.35*10));
+        //when
+        Products soldProduct = myStore.sell(users, "whole wheat", 5);
+        assertEquals(myProduct.getItemName(), soldProduct.getItemName());
+        assertEquals(myProduct.getItemPrice(), soldProduct.getItemPrice());
     }
+
+//    @Test
+//    void shouldNotSellProductWhenProductItemDoesNotExist(){
+//        //given
+//        //when
+//        Products soldProduct = myStore.sell(users, "biscuit", 5);
+//        assertThrows(ResourceNotFoundException.class,() -> myStore.sell(users, "biscuit", 5));
+//
+//    }
 }

@@ -27,8 +27,10 @@ public class mainStore {
 
         Products myProducts = new Products("Crackers", "whole wheat", 20, 3.49 );
         Store myStore = new Store(myshelf,myProducts);
-        myStore.sell(customer, "Whole wheat", 4);
+        myStore.sell(customer, "Whole wheat", 20);
         System.out.println(myStore.issueReceipt());
+
+        System.out.println();
 
     }
 }

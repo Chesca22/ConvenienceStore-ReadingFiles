@@ -45,6 +45,7 @@ public class StoreShelf {
                 else {
                     stocks.add(new Products(category, itemName.toLowerCase(), itemquantity, unitPrice));
                 }
+
             }
         } catch (
                 FileNotFoundException e) {

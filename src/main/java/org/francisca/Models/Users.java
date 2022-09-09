@@ -22,7 +22,6 @@ public class Users {
         public void setRoles(Roles roles) {
             this.roles = roles;
         }
-
         public String getName() {
             return name;
         }
